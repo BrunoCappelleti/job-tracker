@@ -24,11 +24,11 @@ The MVP for this project should include 3 major sections: A welcome page that wi
 
 ### Wireframes
 
-Will upload soon
+![Wireframe image](https://imgur.com/TaABctN)
 
 ### ERB
 
-Will Upload Soon
+![ERB image](https://imgur.com/LvVmxGQ)
 
 ### Components
 
