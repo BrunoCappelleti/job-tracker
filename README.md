@@ -4,11 +4,11 @@ Project still a work in progress, but deployed location and installation informa
 
 ## Project Description
 
-This app should help job seekers organize their information in a more digestible format. Finding a job becomes a full-time job, and the large amount of data that comes with that is difficult to digest. This app aims to address this issue by helping users to parse that information more easily.
+This app should help job seekers organize their information in a more digestible format. Finding a job becomes a full-time job, and the large amount of data that comes with that can hard to keep track of. This app aims to address this issue by helping users to parse that information more easily.
 
 ### MVP/PostMVP
 
-The MVP for this project should include 3 major sections: a welcome page that will introduce the app as well as allow new or returning users to register and login respectively. A job list page that outlines all companies and the position a user has interest in as well as a summary of the users personal information. A job page that outlines a specific job with current status and information, notes, and potential meetings. Post MVP should help the users schedule their time better by sending alerts via email about upcoming meetings or remainders to contact potential leads.
+The MVP for this project should include 3 major sections: A welcome page that will introduce the app as well as allow new or returning users to register and login respectively. A job list page that outlines all companies and the position a user has interest in as well as a summary of the users personal information. A job page that outlines a specific job with current status and information, notes, and potential meetings. Post MVP should help the users schedule their time better by sending alerts via email about upcoming meetings or remainders to contact potential leads.
 
 #### MVP Outline
 - Ensure CRUD operation for users, jobs, notes, and meetings are working
