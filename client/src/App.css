@@ -1,33 +1,169 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
+  box-sizing: border-box;
+  position: relative;
   min-height: 100vh;
+  width: 100vw;
+}
+
+/* ////////////////////////////////// */
+/* Header component */
+/* ////////////////////////////////// */
+
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #333333;
+  color: white;
+  width: 100vw;
+  height: 75px;
+}
+
+/* ////////////////////////////////// */
+/* Main component */
+/* ////////////////////////////////// */
+
+.main {
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 80px 0 80px 0;
+  background: #ffffff;
+}
+
+/* ////////////////////////////////// */
+/* Welcome component */
+/* ////////////////////////////////// */
+
+.welcome {
+  display: flex;
+}
+
+/* ////////////////////////////////// */
+/* JobsView component */
+/* ////////////////////////////////// */
+
+
+
+/* ////////////////////////////////// */
+/* JobsList component */
+/* ////////////////////////////////// */
+
+.job {
+  border-top: solid 2px black;
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.job:hover {
+  background: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* ////////////////////////////////// */
+/* JobDetailedView component */
+/* ////////////////////////////////// */
+
+.job-detailed-options {
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.job-detailed-options div {
+  padding: 10px 25px;
+}
+
+.job-detailed-options div:hover {
+  background: black;
+  color: white;
+}
+/* ////////////////////////////////// */
+/* JobDetailedOverview component */
+/* ////////////////////////////////// */
+
+.job-detailed-overview {
+  border-top: 2px solid black;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ////////////////////////////////// */
+/* JobsForm component */
+/* ////////////////////////////////// */
+
+.job-form-outer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.job-form-inner {
+  margin: 75px auto 0 auto;
+  width: 800px;
+  height: 550px;
+  background: white;
+  border-radius: 1%;
+}
+
+.job-form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.job-form-subheader {
+  position: relative;
+}
+
+.job-close-modal-button {
+  position: absolute;
+  right: 0;
+  height: 30px;
+  width: 30px;
+    vertical-align: center;
+}
+
+.job-close-modal-button:hover {
+  background: black;
+  color: white;
+  vertical-align: bottom;
+}
+
+.job-form-title {
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.job-form-subtitle {
+  margin: 0 auto 25px auto;
+}
+
+.job-form-error-message {
+  color: red;
+  margin: 10px;
+}
+
+/* ////////////////////////////////// */
+/* Footer section */
+/* ////////////////////////////////// */
+
+.footer {
+  position: absolute;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  background: #333333;
+  color: white;
+  width: 100vw;
+  height: 75px;
 }
