@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   def index
     # need ensure it is grabbing the logged in user's jobs
      user = User.find(params[:user_id])
-     jobs = Job.where(user_id: user.id)
+     jobs = Job.where(user_id: user.id).order("id ASC");
      render json: { jobs: jobs}
   end
 

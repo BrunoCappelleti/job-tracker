@@ -33,6 +33,7 @@ class App extends Component {
         user: data,
         token: token,
       });
+      this.props.history.push('/jobs');
     }
   }
 

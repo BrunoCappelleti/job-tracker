@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   box-sizing: border-box;
@@ -23,6 +27,16 @@
   height: 75px;
 }
 
+.logout-button {
+  padding: 10px;
+}
+
+.logout-button:hover {
+  cursor: pointer;
+  background: white;
+  color: black;
+}
+
 /* ////////////////////////////////// */
 /* Main component */
 /* ////////////////////////////////// */
@@ -30,6 +44,8 @@
 .main {
   box-sizing: border-box;
   margin: 0 auto;
+  max-width: 1200px;
+
   min-height: 100vh;
   padding: 80px 0 80px 0;
   background: #ffffff;
@@ -41,13 +57,44 @@
 
 .welcome {
   display: flex;
+  flex-direction: column;
+}
+
+.register-form form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.register-form form input, .register-form form label{
+  width: 400px;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.register-form form input {
+  padding: 0.5rem;
+  background: #ccc;
 }
 
 /* ////////////////////////////////// */
 /* JobsView component */
 /* ////////////////////////////////// */
 
+.create-job-button {
+  border: 2px solid black;
+  width: 150px;
+  margin: 25px auto;
+  padding: 10px;
+}
 
+.create-job-button:hover {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
 
 /* ////////////////////////////////// */
 /* JobsList component */
@@ -64,6 +111,7 @@
 .job:hover {
   background: black;
   color: white;
+  cursor: pointer;
 }
 
 /* ////////////////////////////////// */
@@ -75,6 +123,18 @@
   justify-content: center;
 }
 
+.job-detailed-back-button {
+  width: 100px;
+  margin: 0 auto;
+  padding: 10px 25px;
+}
+
+.job-detailed-back-button:hover {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
 .job-detailed-options div {
   padding: 10px 25px;
 }
@@ -82,6 +142,7 @@
 .job-detailed-options div:hover {
   background: black;
   color: white;
+  cursor: pointer;
 }
 /* ////////////////////////////////// */
 /* JobDetailedOverview component */
@@ -166,4 +227,16 @@
   color: white;
   width: 100vw;
   height: 75px;
+}
+
+/* ////////////////////////////////// */
+/* Media Query section */
+/* ////////////////////////////////// */
+
+@media screen and (min-width: 1200px) {
+  .welcome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
 }

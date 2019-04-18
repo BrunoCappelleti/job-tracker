@@ -6,7 +6,7 @@ import { withRouter } from 'react-router';
 
 const Header = (props) => (
   <div className="header">
-    <h1>Trackr</h1>
+    <h1>Tracker</h1>
     <LoginForm
       handleLogin={props.handleLogin} />
   </div>

@@ -34,16 +34,21 @@ class RegisterForm extends Component {
     ev.preventDefault();
     //should validate for an acceptable form and that passwords match
     //decide if api call goes here for better error message
-    this.props.handleRegister(this.state.formData);
-    this.setState({
-      formData: {
-        username: '',
-        email: '',
-        password: '',
-        confirm_pass: '',
-      }
-    });
-    this.props.history.push('/jobs');
+    const { username, email, password, confirm_pass } = this.state.formData;
+    if( username && email && password && confirm_pass === password) {
+      this.props.handleRegister(this.state.formData);
+      this.setState({
+        formData: {
+          username: '',
+          email: '',
+          password: '',
+          confirm_pass: '',
+        }
+      });
+      this.props.history.push('/jobs');
+    } else {
+      console.log('please fill out form');
+    }
   }
 
   render() {

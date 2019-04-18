@@ -42,7 +42,8 @@ class LoginForm extends Component {
 
   handleLogout(ev) {
     ev.preventDefault();
-
+    localStorage.setItem('trackrToken', '');
+    this.props.history.push('/');
     //this needs to dump localStorage and user and token from app and redirect to home
   }
 
@@ -50,7 +51,7 @@ class LoginForm extends Component {
     const { email, password } = this.state.formData;
     return (
       <div>
-        {localStorage.getItem('trackrToken') && <div onClick={this.handleLogout}>Logout</div>}
+        {localStorage.getItem('trackrToken') && <div className="logout-button" onClick={this.handleLogout}>Logout</div>}
         {!localStorage.getItem('trackrToken') && <div className='login-form'>
           <form onSubmit={this.loginUser}>
           <label>Email:</label>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import JobsList from './JobsList'
 import JobForm from './JobForm'
 import { withRouter } from 'react-router';
+import jwtDecode from 'jwt-decode';
 import { createJob, getJobs } from '../services/apiHelper';
 
 //ensure componentDidMount is functioning correctly
@@ -20,20 +21,33 @@ class JobsView extends Component {
     this.toggleModal = this.toggleModal.bind(this);
   }
 
-  async componentDidUpdate(prevProps) {
-    if(this.props.user.id !== prevProps.user.id) {
-      const resp = await getJobs(this.props.user.id);
+  async componentDidMount() {
+    const user = this.props.user
+    const token = localStorage.getItem('trackrToken');
+    if(user) {
+      const resp = await getJobs(user.id);
       if(resp) {
         const { jobs } = resp;
         this.setState({
           jobs,
           loading: false,
-        })
-      } else {
-        console.log('something went wrong');
+        });
       }
+    } else if(token) {
+      const data = jwtDecode(token);
+      const resp = await getJobs(data.id);
+      if(resp) {
+        const { jobs } = resp;
+        this.setState({
+          jobs,
+          loading: false,
+        });
+      }
+    } else {
+        this.props.history.push('/');
     }
   }
+
 
   toggleModal() {
     //might have to alter this to dump data on modal close
@@ -74,7 +88,7 @@ class JobsView extends Component {
               <div className="create-job-button" onClick={(ev) => {
                 ev.preventDefault();
                 this.toggleModal()
-              }}>Open a New Job!</div>
+              }}>Create a New Job!</div>
             </div>
             <JobsList
               jobs={jobs} />
